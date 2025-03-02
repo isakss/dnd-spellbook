@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Lucidia Console", Monaco, monospace;
+    background-color:#ede0c2;
+}
+
+.spell-list > li {
+    list-style: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    min-height: 75px;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #57544b;
+}
+
+header > h1 {
+    color: whitesmoke;
+}
