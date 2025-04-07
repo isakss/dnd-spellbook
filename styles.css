@@ -41,6 +41,13 @@ body {
     width: 100%;
 }
 
+.spell-card:hover {
+    transform: scale(1.05);
+    background-color: #57544b;
+    color: white;
+    transition: 0.4s;
+}
+
 .spell-card > .spell-header {
     font-weight: bold;
     font-size: 1rem;
@@ -54,15 +61,6 @@ body {
 .hide {
     display: none;
 }
-
-/*.spell-list > li {
-    list-style: none;
-    font-weight: bold;
-    font-size: 1rem;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}*/
 
 header {
     position: sticky;

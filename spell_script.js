@@ -6,15 +6,16 @@ const apiString = "https://www.dnd5eapi.co/api/spells";
 
 let spells = []
 
+// Search filter function, searches spell list for names containing target value
 spellSearchInput.addEventListener("input", (e) => {
     const value = e.target.value.toLowerCase()
     
     spells.forEach(spell => {
         const spellName = spell.name.toLowerCase()
         if(spellName.includes(value)) {
-            spell.element.classList.remove("hide")
+            spell.element.classList.remove("hide")      //If the spell name includes value, it is no longer hidden
         } else {
-            spell.element.classList.add("hide")
+            spell.element.classList.add("hide")         //If the value is not in the name, it is filtered out
         }
     })
 })
