@@ -9,9 +9,60 @@ body {
     background-color:#ede0c2;
 }
 
-.spell-list > li {
-    list-style: none;
+.search-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: .50rem;
+    width: 100%;
+    text-align: center;
 }
+
+.search-wrapper > input {
+    font-size: 1rem;
+    margin-right: auto;
+    margin-left: auto;
+    width: 25%;
+    height: 2rem;
+    border-radius: 3px;
+}
+
+.spell-cards {
+   display: grid;
+   grid-template-columns: repeat(5, minmax(150px, 1fr));
+   gap: 1rem;
+   margin-top: 1rem;
+}
+
+.spell-card {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: antiquewhite;
+    padding: .5rem;
+    width: 100%;
+}
+
+.spell-card > .spell-header {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: .25rem;
+}
+
+/*.spell-card > .spell-body {
+    font-size: .8rem;
+}*/
+
+.hide {
+    display: none;
+}
+
+/*.spell-list > li {
+    list-style: none;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}*/
 
 header {
     position: sticky;

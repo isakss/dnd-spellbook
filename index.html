@@ -5,17 +5,26 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Dungeons & Dragons 5e Spellbook</title>
             <link rel="stylesheet" href="styles.css">
+            <script src="/spell_script.js" defer></script>
         </head>
         <body>
+
             <header class="heading">
                 <h1 id="header-logo">D&D 5e Spellbook</h1>
-                <input type="text" id="search-bar" placeholder="Search spells...">
             </header>
 
-            <div class="spells">
-                <ul class="spell-list" id="spell-list"></ul>
+            <div class="search-wrapper">
+                <label for="search-bar">Search Spells</label>
+                <input type="search" id="search-bar" data-search>
             </div>
 
-            <script src="/spell_script.js"></script>
+            <div class="spell-cards" data-spell-cards-container>
+                <template data-spell-template>
+                    <div class="spell-card">
+                        <div class="spell-header" data-header></div>
+                        <!--<div class="spell-body" data-body></div>-->
+                    </div>
+                </template>
+            </div>
         </body>
     </html>
