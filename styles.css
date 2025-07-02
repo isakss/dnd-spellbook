@@ -39,6 +39,7 @@ body {
     background-color: antiquewhite;
     padding: .5rem;
     width: 100%;
+    transition: 0.4s;
 }
 
 .spell-card:hover {
