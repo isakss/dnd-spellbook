@@ -55,9 +55,9 @@ body {
     margin-bottom: .25rem;
 }
 
-/*.spell-card > .spell-body {
+.spell-card > .spell-body {
     font-size: .8rem;
-}*/
+}
 
 .hide {
     display: none;
