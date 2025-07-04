@@ -3,7 +3,7 @@ const spellCardContainer = document.querySelector("[data-spell-cards-container]"
 const spellSearchInput = document.querySelector("[data-search]");
 
 const apiString = "https://www.dnd5eapi.co/api/spells";
-const spellCache = {};
+const spellCache = {}; // store instance of spell in a dictionary keyed on spell name
 
 let spells = [];
 
@@ -21,15 +21,19 @@ spellSearchInput.addEventListener("input", (e) => {
     });
 });
 
+
+// Call api and initialize spell card objects
 fetch(apiString)
     .then(response => response.json())
     .then(data => {
         spells = data.results.map(spell => {
             const spellCard = spellCardTemplate.content.cloneNode(true);
             const spellCardElement = spellCard.querySelector(".spell-card");
+
             const spellHeader = spellCard.querySelector("[data-header]");
             const spellBody = spellCard.querySelector("[data-body]");
-
+            
+            // Spell body contents
             const spellLevel = spellCardElement.querySelector("[data-level]");
             const spellDetails = spellCardElement.querySelector("[data-details]");
             const spellRange = spellCardElement.querySelector("[data-range]");
@@ -37,6 +41,7 @@ fetch(apiString)
 
             spellHeader.textContent = spell.name;
 
+            // When you click on spell banner, fetches api information, loads into body and presents it in a drop down list
             spellHeader.addEventListener("click", () => {
                 if(spellBody.classList.contains("hide")) {
                     if(spellCache[spell.name]) {
@@ -58,16 +63,16 @@ fetch(apiString)
                     spellBody.classList.add("hide");
                 }
             });
-    
+            
+            // Maps spell details to their html element
             function getSpellDetails(detailData) {
                 spellLevel.textContent = `Level: ${detailData.level}`;
                 spellDetails.textContent = detailData.desc.join(" ");
                 spellRange.textContent = `Range: ${detailData.range}`;
                 spellComponents.textContent = `Components: ${detailData.components.join(", ")}`;
             }
-
-        //spellBody.textContent = spell.description
-        // TODO: populate body with spell details
+            
+            // Adds spell card to spell card container
             spellCardContainer.append(spellCardElement);
             return { name: spell.name, element: spellCardElement };
         });
